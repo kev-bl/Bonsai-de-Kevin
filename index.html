@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#183b2d">
+  <meta name="description" content="Bonsai de Kevin — carnet de soins et jardin japonais personnel.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Bonsai de Kevin</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div><div class="eyebrow">私の小さな庭 · MON PETIT JARDIN</div><h1>Bonsai <em>de Kevin</em></h1></div>
+      <button class="avatar" id="open-settings" aria-label="Paramètres">京</button>
+    </header>
+
+    <main id="view" aria-live="polite"></main>
+
+    <nav class="tabbar" aria-label="Navigation principale">
+      <button class="tab active" data-page="home"><span>⌂</span><small>Jardin</small></button>
+      <button class="tab" data-page="collection"><span>盆</span><small>Collection</small></button>
+      <button class="tab" data-page="journal"><span>日</span><small>Journal</small></button>
+      <button class="tab" data-page="tasks"><span>◷</span><small>À faire</small></button>
+    </nav>
+  </div>
+
+  <dialog id="tree-dialog" class="modal">
+    <form id="tree-form" method="dialog">
+      <div class="modal-head"><div><div class="eyebrow">新しい盆栽 · NOUVEL ARBRE</div><h2 id="tree-modal-title">Ajouter un bonsaï</h2></div><button type="button" class="icon-btn" data-close="tree-dialog">✕</button></div>
+      <input type="hidden" id="tree-id">
+      <label>Nom de l'arbre<input id="tree-name" required placeholder="Ex. Mon pin noir"></label>
+      <div class="form-grid">
+        <label>Espèce<input id="tree-species" placeholder="Pinus thunbergii"></label>
+        <label>Date d'acquisition<input id="tree-date" type="date"></label>
+      </div>
+      <label>Emplacement<select id="tree-place"><option>Extérieur</option><option>Intérieur lumineux</option><option>Serre froide</option></select></label>
+      <label>Notes<textarea id="tree-notes" rows="3" placeholder="Âge estimé, provenance, particularités…"></textarea></label>
+      <label class="file-label">Photo de l'arbre<input id="tree-photo" type="file" accept="image/*"></label>
+      <div class="modal-actions"><button type="button" class="btn secondary" data-close="tree-dialog">Annuler</button><button class="btn primary" type="submit">Enregistrer l'arbre</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="care-dialog" class="modal">
+    <form id="care-form" method="dialog">
+      <div class="modal-head"><div><div class="eyebrow">お手入れ · SOIN</div><h2>Noter un entretien</h2></div><button type="button" class="icon-btn" data-close="care-dialog">✕</button></div>
+      <label>Bonsaï<select id="care-tree" required></select></label>
+      <label>Type de soin<select id="care-type"><option value="Arrosage">💧 Arrosage</option><option value="Taille">✂️ Taille</option><option value="Fertilisation">🌱 Fertilisation</option><option value="Rempotage">🪴 Rempotage</option><option value="Observation">♡ Observation</option></select></label>
+      <label>Date<input id="care-date" type="date" required></label>
+      <label>Commentaire<textarea id="care-note" rows="3" placeholder="Quantité d'eau, branches taillées, observations…"></textarea></label>
+      <div class="modal-actions"><button type="button" class="btn secondary" data-close="care-dialog">Annuler</button><button class="btn primary" type="submit">Ajouter au journal</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="task-dialog" class="modal">
+    <form id="task-form" method="dialog">
+      <div class="modal-head"><div><div class="eyebrow">予定 · RENDEZ-VOUS</div><h2>Nouvelle tâche</h2></div><button type="button" class="icon-btn" data-close="task-dialog">✕</button></div>
+      <label>Intitulé<input id="task-title" required placeholder="Ex. Vérifier le substrat"></label>
+      <label>Bonsaï<select id="task-tree"></select></label>
+      <label>Échéance<input id="task-date" type="date" required></label>
+      <div class="modal-actions"><button type="button" class="btn secondary" data-close="task-dialog">Annuler</button><button class="btn primary" type="submit">Créer la tâche</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="settings-dialog" class="modal">
+    <div class="modal-head"><div><div class="eyebrow">設定 · PRÉFÉRENCES</div><h2>Mon jardin</h2></div><button class="icon-btn" data-close="settings-dialog">✕</button></div>
+    <p class="muted">Tes données sont enregistrées sur cet appareil. Pense à exporter une sauvegarde régulièrement.</p>
+    <div class="settings-actions"><button class="btn secondary" id="export-data">Exporter mes données</button><label class="btn secondary import-label">Importer une sauvegarde<input type="file" id="import-data" accept="application/json"></label><button class="btn danger" id="reset-data">Réinitialiser les données</button></div>
+    <p class="tiny muted">Bonsai de Kevin · Version 1.0 · Jardin numérique personnel</p>
+  </dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

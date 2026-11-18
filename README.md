@@ -1,42 +1,19 @@
-# Bonsai de Kevin 🌿
+# Bonsai de Kevin — V2
 
-Application web progressive (PWA) de suivi d'une collection de bonsaïs, avec une esthétique inspirée des jardins japonais.
+Application web progressive (PWA) de suivi personnel des bonsaïs.
 
-## Fonctionnalités de cette première version
+## Nouveautés V2
+- Ouverture d'une fiche individuelle depuis l'accueil ou la collection.
+- Onglets Infos, Calendrier, Photos et Soins.
+- Historique de soins propre à chaque arbre, tout en conservant le journal général.
+- Fertilisation différenciée : engrais liquide ou solide, produit, dosage/quantité et prochaine date.
+- Ajout de photos datées dans le carnet de chaque arbre.
+- Rappels liés à un arbre depuis son calendrier.
 
-- Collection : ajouter, modifier et supprimer des arbres.
-- Fiches : espèce, date d'acquisition, emplacement, notes et photo.
-- Journal : arrosage, taille, fertilisation, rempotage et observations.
-- Tâches : créer, cocher et supprimer des rappels.
-- Tableau de bord et statistiques simples.
-- Export et import JSON des données.
-- Stockage local sur l'appareil et mode hors-ligne via service worker.
+## Installation GitHub Pages
+Déposer le contenu de ce dossier à la racine du dépôt, puis activer GitHub Pages sur `main` et `/ (root)`.
 
-## Publication gratuite sur GitHub Pages
+## Données
+Les données restent enregistrées dans le stockage local du navigateur. Utiliser Paramètres → Exporter mes données avant toute mise à jour importante. Pour retrouver les données existantes après mise à jour, ouvrir la V2 dans le même navigateur/appareil et ne pas effacer les données du site.
 
-1. Crée un compte sur https://github.com si nécessaire.
-2. Crée un nouveau dépôt public nommé `bonsai-de-kevin`.
-3. Décompresse l'archive et ajoute **tous les fichiers à la racine** du dépôt.
-4. Dans GitHub, ouvre **Settings → Pages**.
-5. Dans **Build and deployment**, choisis **Deploy from a branch**.
-6. Sélectionne la branche `main`, le dossier `/ (root)`, puis **Save**.
-7. Attends quelques minutes. Ton site sera accessible à l'adresse :
-   `https://TON-PSEUDO.github.io/bonsai-de-kevin/`
-
-## Installation sur iPhone
-
-1. Ouvre l'adresse GitHub Pages dans Safari.
-2. Appuie sur le bouton Partager.
-3. Choisis **Sur l'écran d'accueil**.
-4. Valide avec **Ajouter**.
-
-## Données et sauvegardes
-
-Les données sont conservées dans le stockage local du navigateur (`localStorage`) sur l'appareil. Elles ne sont pas automatiquement synchronisées entre appareils. Utilise **Paramètres → Exporter mes données** pour conserver une sauvegarde JSON, puis importe-la sur un autre appareil si besoin.
-
-## À savoir / prochaines évolutions
-
-- Les photos sont enregistrées localement dans le navigateur. Évite les très grandes images afin de ne pas saturer le stockage.
-- Les rappels sont des tâches à consulter dans l'application ; cette version ne déclenche pas encore de notifications système automatiques.
-- L'illustration d'accueil est dessinée en CSS. Les polices Google peuvent nécessiter une connexion, mais l'application reste utilisable sans elles.
-- Pour une synchronisation multi-appareils, il faudra ajouter un service backend (par exemple Supabase) et une authentification.
+Version 2.0.0

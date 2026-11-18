@@ -48,6 +48,12 @@
       <div class="modal-head"><div><div class="eyebrow">お手入れ · SOIN</div><h2>Noter un entretien</h2></div><button type="button" class="icon-btn" data-close="care-dialog">✕</button></div>
       <label>Bonsaï<select id="care-tree" required></select></label>
       <label>Type de soin<select id="care-type"><option value="Arrosage">💧 Arrosage</option><option value="Taille">✂️ Taille</option><option value="Fertilisation">🌱 Fertilisation</option><option value="Rempotage">🪴 Rempotage</option><option value="Observation">♡ Observation</option></select></label>
+      <div id="fertilizer-fields" class="fertilizer-fields" hidden>
+        <label>Type d'engrais<select id="fertilizer-kind"><option value="Liquide">Engrais liquide</option><option value="Solide">Engrais solide</option></select></label>
+        <label>Nom du produit<input id="care-product" placeholder="Ex. Biogold, engrais organique…"></label>
+        <label><span id="care-amount-label">Dosage / quantité</span><input id="care-amount" placeholder="Ex. 2 ml / litre ou 5 boulettes"></label>
+        <label>Prochaine fertilisation (facultatif)<input id="care-next-date" type="date"></label>
+      </div>
       <label>Date<input id="care-date" type="date" required></label>
       <label>Commentaire<textarea id="care-note" rows="3" placeholder="Quantité d'eau, branches taillées, observations…"></textarea></label>
       <div class="modal-actions"><button type="button" class="btn secondary" data-close="care-dialog">Annuler</button><button class="btn primary" type="submit">Ajouter au journal</button></div>
@@ -68,7 +74,7 @@
     <div class="modal-head"><div><div class="eyebrow">設定 · PRÉFÉRENCES</div><h2>Mon jardin</h2></div><button class="icon-btn" data-close="settings-dialog">✕</button></div>
     <p class="muted">Tes données sont enregistrées sur cet appareil. Pense à exporter une sauvegarde régulièrement.</p>
     <div class="settings-actions"><button class="btn secondary" id="export-data">Exporter mes données</button><label class="btn secondary import-label">Importer une sauvegarde<input type="file" id="import-data" accept="application/json"></label><button class="btn danger" id="reset-data">Réinitialiser les données</button></div>
-    <p class="tiny muted">Bonsai de Kevin · Version 1.0 · Jardin numérique personnel</p>
+    <p class="tiny muted">Bonsai de Kevin · Version 2.0 · Carnet individuel</p>
   </dialog>
 
   <div id="toast" class="toast" role="status"></div>
